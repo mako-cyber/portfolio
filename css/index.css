@@ -88,7 +88,7 @@ h2 {
 .about-img img {
     width: 300px;
     border: 5px solid #d6a6a6;
-    border-radius: 0px  100px 100px 0px;
+    border-radius: 0px 100px 100px 0px;
 }
 
 .profile {
@@ -143,6 +143,24 @@ h2 {
     width: 24px;
     margin: 0 6px;
 }
+
+
+
+
+/*全て共通：モーダルのボタンの色を変更したい場合*/
+.modaal-close:after,
+.modaal-close:before {
+    background: #ccc;
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before {
+    background: #666;
+}
+
+
 
 
 
