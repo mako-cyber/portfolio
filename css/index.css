@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    font-family: 'Yu Mincho', 'Hiragino Mincho Pro', serif;
+    background-color: #f7d5ca;
+    color: #4e2e2e;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    border-bottom: 1px solid #d6a6a6;
+}
+
+.header-content h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #7e4a4a;
+    margin-top: 5px;
+}
+
+nav ul {
+    margin-top: 30px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: #fff;
+    color: #4e2e2e;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-img img {
+    margin-top: 30px;
+    width: 360px;
+    border-radius: 50%;
+}
+
+section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #6b2d3e;
+    border-bottom: 1px solid #d1a0a0;
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+.about-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.about-box h3 {
+    font-size: 30px;
+}
+
+.about-box .text {
+    flex: 1;
+}
+
+.about-box .catch {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.about-img img {
+    width: 300px;
+    border: 5px solid #d6a6a6;
+    border-radius: 0px 100px 100px 0px;
+}
+
+.profile {
+    margin-top: 40px;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.work-item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.work-item p {
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+.commission-title,
+.commission-text {
+    text-align: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.commission-img img,
+.contact-img img {
+    width: 280px;
+    border-radius: 10px;
+    margin-left: 50%;
+    translate: -140px;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.icons img {
+    width: 24px;
+    margin: 0 6px;
+}
+
+
+
+
+/*全て共通：モーダルのボタンの色を変更したい場合*/
+.modaal-close:after,
+.modaal-close:before {
+    background: #ccc;
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before {
+    background: #666;
+}
+
+/* Modaalの拡大画像サイズを統一 */
+.modaal-content-container img {
+    max-width: 90vw;
+    /* 画面の90%以内に制限 */
+    max-height: 80vh;
+    /* 高さも画面の80%以内に */
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* ===== モバイル対応（幅768px以下） ===== */
+@media screen and (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+    }
+
+    .about-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .about-box .text {
+        width: 100%;
+    }
+
+    .about-img img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .work-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .commission-img img,
+    .contact-img img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+    }
+
+    .icons img {
+        width: 22px;
+        margin: 0 4px;
+    }
+}
