@@ -1,14 +1,36 @@
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Yu Mincho', 'Hiragino Mincho Pro', serif;
-    background-color: #f7d5ca;
+    background-color: #ffffff;
     color: #4e2e2e;
 }
 
+/* 全体のセクションをガラスカード風に */
+section,
 header {
+    background: rgba(255, 255, 255, 0.8);
+    /* 半透明ホワイト */
+    border-radius: 60px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    /* ふんわり影 */
+    backdrop-filter: blur(10px);
+    /* ガラス感 */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 50px;
+    margin: 20px 10px;
+}
+
+header {
+    height: 25vh;
     text-align: center;
     padding: 60px 20px 30px;
     border-bottom: 1px solid #d6a6a6;
+    margin: 10px 0;
+    /* background-image: url(../images/花背景２.webp);
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .header-content h1 {
@@ -17,6 +39,47 @@ header {
     font-weight: bold;
     letter-spacing: 0.05em;
 }
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* hover時に紫に光る */
+nav a:hover {
+    color: #a855f7;
+    /* パステルっぽい紫 (#a855f7 = Tailwindのpurple-500) */
+    text-shadow: 0 0 8px #a855f7, 0 0 15px #c084fc;
+}
+
+/* 下線アニメーションも維持する場合 */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: linear-gradient(90deg, #a855f7, #c084fc);
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
 
 .subtitle {
     font-size: 1rem;
@@ -46,14 +109,14 @@ nav a {
 
 .header-img img {
     margin-top: 30px;
-    width: 360px;
-    border-radius: 50%;
+    width: 560px;
+    border-radius: 30%;
 }
 
 section {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 50px 50px;
 }
 
 h2 {
@@ -86,9 +149,9 @@ h2 {
 }
 
 .about-img img {
-    width: 300px;
-    border: 5px solid #d6a6a6;
-    border-radius: 0px 100px 100px 0px;
+    width: 350px;
+    border: 2px solid #d6a6a6;
+    border-radius: 20%;
 }
 
 .profile {
@@ -96,6 +159,114 @@ h2 {
     font-size: 0.95rem;
     line-height: 1.8;
 }
+
+/* Skills セクション背景（黒） */
+#skills {
+    background: rgba(255, 255, 255, 0.7);
+    min-height: 60vh;
+}
+
+/* Skills カード */
+.skills-box {
+    background: rgba(255, 255, 255, 0.7);
+    /* 薄い透明ホワイト */
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Skillラベル */
+.skill {
+    margin: 25px 0;
+}
+
+.skill span {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* バー全体 */
+.bar {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 18px;
+}
+
+/* バーレベル（ネオンカラーっぽく） */
+.level {
+    height: 100%;
+    border-radius: 12px 0 0 12px;
+    transition: width 1s ease;
+}
+
+.skill:nth-of-type(1) .level {
+    background: linear-gradient(90deg, #ff77e9, #ffb6f9);
+}
+
+/* Illustrator */
+.skill:nth-of-type(2) .level {
+    background: linear-gradient(90deg, #77cfff, #b6e0ff);
+}
+
+/* Photoshop */
+.skill:nth-of-type(3) .level {
+    background: linear-gradient(90deg, #77ffb0, #b6ffd9);
+}
+
+/* HTML */
+.skill:nth-of-type(4) .level {
+    background: linear-gradient(90deg, #ffe177, #fff4b6);
+}
+
+/* CSS */
+
+
+.skill .bar {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* スキルレベルのバー */
+.skill .level {
+    height: 100%;
+    border-radius: 12px 0 0 12px;
+    transition: width 1s ease;
+    position: relative;
+}
+
+/* 光るアニメーション用のエフェクト */
+.skill .level::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    /* 初期位置は左の外 */
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    transform: skewX(-20deg);
+    transition: left 0.5s;
+    opacity: 0;
+}
+
+/* hover時にキラッと光が走る */
+.skill:hover .level::after {
+    left: 120%;
+    /* 右に走り抜ける */
+    opacity: 1;
+    transition: left 0.8s ease-out, opacity 0.3s ease;
+}
+
+
+
 
 .work-gallery {
     display: grid;
@@ -231,5 +402,108 @@ h2 {
     .icons img {
         width: 22px;
         margin: 0 4px;
+    }
+}
+
+/* --- モバイル用レスポンシブ調整 --- */
+@media screen and (max-width: 768px) {
+
+    /* 全体の余白調整 */
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* ヘッダー */
+    header {
+        padding: 40px 10px;
+    }
+
+    /* ナビゲーション：縦並び */
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+
+    /* header 画像サイズ調整 */
+    .header-img img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* about セクション */
+    .about-box {
+        flex-direction: column;
+        /* 画像とテキストを縦並びに */
+        text-align: center;
+    }
+
+    .about-img img {
+        max-width: 80%;
+        margin: 20px auto;
+    }
+
+    /* skills セクション */
+    .skills-box {
+        padding: 20px;
+    }
+
+    .bar {
+        height: 14px;
+    }
+
+    /* work セクション */
+    .work-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* 1列に */
+        gap: 20px;
+    }
+
+    .work-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* commission */
+    .commission-img img {
+        max-width: 70%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* contact */
+    .contact-img img {
+        max-width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .contact-info {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
     }
 }
